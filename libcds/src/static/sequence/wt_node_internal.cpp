@@ -30,7 +30,7 @@ namespace cds_static
             ibitmap[i]=0;
         for(uint i=0;i<n;i++) {
             if(c->is_set(symbols[i],l))
-                bitset(ibitmap,i);
+                cds_utils::bitset(ibitmap,i);
         }
         bitmap = bmb->build(ibitmap, n);
         delete [] ibitmap;
@@ -83,7 +83,7 @@ namespace cds_static
             ibitmap[i]=0;
         for(size_t i=0;i<n;i++)
             if(c->is_set((uint)symbols[i + left],l))
-                bitset(ibitmap,i);
+                cds_utils::bitset(ibitmap,i);
         bitmap = bmb->build(ibitmap, n);
         delete [] ibitmap;
 
@@ -98,7 +98,7 @@ namespace cds_static
             uchar swap = symbols[j+left];
                                  // swapping
             while (!get_field(done, 1, j+left)) {
-                ulong k = j;
+                unsigned long k = j;
                 if (!c->is_set(swap,l))
                     j = bitmap->rank0(k)-1;
                 else

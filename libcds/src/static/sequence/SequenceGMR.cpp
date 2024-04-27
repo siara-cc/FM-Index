@@ -68,7 +68,7 @@ void SequenceGMR::build(uint * sequence, BitSequenceBuilder * bmb, SequenceBuild
   uint pos=0;
   for (unsigned long long i=0;i<(unsigned long long)num_chunks*sigma;i++) {
     for (uint j=0;j<ones[i];j++) {
-      bitset(B_bitmap, pos);
+      cds_utils::bitset(B_bitmap, pos);
       pos++;
     }
     pos++;

@@ -67,12 +67,12 @@ perm createPerm(uint *elems, uint nelems, uint t, BitSequenceBuilder * bmb) {
       if (bitget(baux,i) == 0) {
         nextelem = j = bptr = antbptr = i;
         aux = 0;
-        bitset(baux, j);
+        cds_utils::bitset(baux, j);
         cyclesize = 0;
         firstelem = j;
         while ((elem=get_field(elems,nbits,j)) != nextelem) {
           j = elem;
-          bitset(baux, j);
+          cds_utils::bitset(baux, j);
           aux++;
           if (aux >= t) {
             auxbwdptr[nbwdptrs].key = j;
@@ -80,14 +80,14 @@ perm createPerm(uint *elems, uint nelems, uint t, BitSequenceBuilder * bmb) {
             antbptr = bptr;
             bptr    = j;
             aux     = 0;
-            bitset(b, j);
+            cds_utils::bitset(b, j);
           }
           cyclesize++;
         }
         if (cyclesize >= t) {
           auxbwdptr[nbwdptrs].key = nextelem;
           auxbwdptr[nbwdptrs++].pointer = bptr;
-          bitset(b, nextelem);
+          cds_utils::bitset(b, nextelem);
         }
       }
     }

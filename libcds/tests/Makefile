@@ -1,5 +1,5 @@
 
-CPP=g++
+CPP=g++ -std=c++98
 
 CPPFLAGS=-g3 -Wall -O0 -I../includes/ 
 #CPPFLAGS=-O3 -Wall -DNDEBUG -I../includes/

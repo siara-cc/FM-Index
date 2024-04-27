@@ -1,5 +1,5 @@
 
-CPP=g++
+CPP=g++ -std=c++98
 
 INCL=-I../includes/
 
